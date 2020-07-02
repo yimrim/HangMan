@@ -48,20 +48,22 @@ public class GuessActivity extends AppCompatActivity implements View.OnClickList
                 tvFailCount.setText("F: " + hangMan.getFailAmount());
                 Toast.makeText(getApplicationContext(), hangMan.getAfterGuessMessage(), Toast.LENGTH_SHORT).show();
                 etChar.getText().clear();
-            } else {
-                Toast.makeText(getApplicationContext(), "Gib einen gültigen Buchstaben ein", Toast.LENGTH_SHORT).show();
-            }
-        } else {
-            Intent backToMain = new Intent(this, MainActivity.class);
 
-            if (sendChar.getText().equals("Reset Game")) {
-                startActivity(backToMain);
-                this.finish();
+                Intent backToMain = new Intent(this, MainActivity.class);
+                if (hangMan.isFailed()) {
+                    sendChar.setText("Reset Game");
+                    Toast.makeText(getApplicationContext(), "You've failed!", Toast.LENGTH_SHORT).show();
+                } else if (hangMan.isWon()) {
+                    sendChar.setText("Reset Game");
+                    Toast.makeText(getApplicationContext(), "You've won!", Toast.LENGTH_SHORT).show();
+                }
+                if (sendChar.getText().equals("Reset Game")) {
+                    startActivity(backToMain);
+                    this.finish();
+                }
             } else {
-                sendChar.setText("Reset Game");
-                Toast.makeText(getApplicationContext(), "you've failed!!, please reset the game", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Enter a valid character", Toast.LENGTH_SHORT).show();
             }
         }
-
     }
 }
