@@ -41,13 +41,16 @@ public class GuessActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-
         if (!hangMan.isFailed() && !hangMan.isWon()) {
-            hangMan.guess(etChar.getText().toString());
-            tvGuess.setText(hangMan.getDef());
-            tvFailCount.setText("F: " + hangMan.getFailAmount());
-            Toast.makeText(getApplicationContext(), hangMan.getAfterGuessMessage(), Toast.LENGTH_SHORT).show();
-            etChar.getText().clear();
+            if (!etChar.getText().toString().isEmpty()) {
+                hangMan.guess(etChar.getText().toString().toLowerCase());
+                tvGuess.setText(hangMan.getDef());
+                tvFailCount.setText("F: " + hangMan.getFailAmount());
+                Toast.makeText(getApplicationContext(), hangMan.getAfterGuessMessage(), Toast.LENGTH_SHORT).show();
+                etChar.getText().clear();
+            } else {
+                Toast.makeText(getApplicationContext(), "Gib einen gültigen Buchstaben ein", Toast.LENGTH_SHORT).show();
+            }
         } else {
             Intent backToMain = new Intent(this, MainActivity.class);
 

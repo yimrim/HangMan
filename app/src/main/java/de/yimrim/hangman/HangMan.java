@@ -49,7 +49,7 @@ public class HangMan {
 
             if (cAtIndex == guess) {
                 def[i] = guess;
-                afterGuessMessage = guess + " is correct";
+                afterGuessMessage = guess + " is included";
             } else {
                 fails++;
                 if (fails == word.length()) {
