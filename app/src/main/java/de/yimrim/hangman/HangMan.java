@@ -1,7 +1,5 @@
 package de.yimrim.hangman;
 
-import android.widget.Toast;
-
 import java.util.Arrays;
 
 public class HangMan {
@@ -10,13 +8,17 @@ public class HangMan {
     private int failAmount;
     private char[] def;
     private int allowedAttempts;
-    private String afterGuessMessage="";
+    private String afterGuessMessage = "";
 
 
     public HangMan(String word, int allowedAttempts) {
         this.word = word.toLowerCase();
         this.allowedAttempts = allowedAttempts;
         setUp();
+    }
+
+    public int getFailAmount() {
+        return failAmount;
     }
 
     public String getAfterGuessMessage() {
@@ -29,7 +31,7 @@ public class HangMan {
     }
 
 
-    public String getDef(){
+    public String getDef() {
         String s = new String(def);
         return s;
     }
@@ -47,6 +49,7 @@ public class HangMan {
 
             if (cAtIndex == guess) {
                 def[i] = guess;
+                afterGuessMessage = guess + " is correct";
             } else {
                 fails++;
                 if (fails == word.length()) {

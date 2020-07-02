@@ -1,12 +1,13 @@
 package de.yimrim.hangman;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -29,12 +30,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
 
         String word = et.getText().toString();
-        Intent toGuess = new Intent(this,GuessActivity.class);
-        toGuess.putExtra("word",word);
-        startActivity(toGuess);
-        this.finish();
-
+        if(!word.isEmpty()){
+            Intent toGuess = new Intent(this,GuessActivity.class);
+            toGuess.putExtra("word",word);
+            startActivity(toGuess);
+            this.finish();
+        }else {
+            Toast.makeText(getApplicationContext(),"please insert a word!",Toast.LENGTH_SHORT).show();
+        }
     }
-
-
 }
