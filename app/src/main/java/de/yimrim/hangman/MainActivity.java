@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(toGuess);
             this.finish();
         }else {
-            Toast.makeText(getApplicationContext(),"Please insert a word!",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),R.string.please_insert_word,Toast.LENGTH_SHORT).show();
         }
     }
 }

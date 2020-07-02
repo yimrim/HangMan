@@ -1,9 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">HangMan</string>
     <string name="word">Word</string>
     <string name="send_word">Send word</string>
     <string name="Character">Character</string>
     <string name="send_character">Send character</string>
-    <string name="please_insert_word">Please insert a word!</string>
+    <string name="please_insert_word">Please insert a Wor</string>
     <string name="enter_a_valid_character">Enter a valid character!</string>
 </resources>

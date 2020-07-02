@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HangMan</string>
+    <string name="word">Wort</string>
+    <string name="send_word">Wort absenden</string>
+    <string name="Character">Buchstabe</string>
+    <string name="send_character">Buchstabe absenden</string>
+    <string name="please_insert_word">Bitte gib ein Wort ein!</string>
+    <string name="enter_a_valid_character">Bitte gib einen gültigen Buchstaben ein!</string>
+</resources>
