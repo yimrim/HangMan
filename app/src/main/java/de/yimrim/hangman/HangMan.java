@@ -8,7 +8,6 @@ public class HangMan {
     private int failAmount;
     private char[] def;
     private int allowedAttempts;
-    private String afterGuessMessage = "";
 
 
     public HangMan(String word, int allowedAttempts) {
@@ -19,10 +18,6 @@ public class HangMan {
 
     public int getFailAmount() {
         return failAmount;
-    }
-
-    public String getAfterGuessMessage() {
-        return afterGuessMessage;
     }
 
     public void setUp() {
@@ -49,11 +44,9 @@ public class HangMan {
 
             if (cAtIndex == guess) {
                 def[i] = guess;
-                afterGuessMessage = guess + " is included";
             } else {
                 fails++;
                 if (fails == word.length()) {
-                    afterGuessMessage = guess + " is not included";
                     failAmount++;
                 }
             }

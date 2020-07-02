@@ -33,9 +33,7 @@ public class GuessActivity extends AppCompatActivity implements View.OnClickList
         Bundle bundle = getIntent().getExtras();
         word = bundle.getString("word");
 
-
         hangMan = new HangMan(word, 10);
-
         tvGuess.setText(hangMan.getDef());
     }
 
@@ -46,7 +44,6 @@ public class GuessActivity extends AppCompatActivity implements View.OnClickList
                 hangMan.guess(etChar.getText().toString().toLowerCase());
                 tvGuess.setText(hangMan.getDef());
                 tvFailCount.setText("F: " + hangMan.getFailAmount());
-                Toast.makeText(getApplicationContext(), hangMan.getAfterGuessMessage(), Toast.LENGTH_SHORT).show();
                 etChar.getText().clear();
 
                 Intent backToMain = new Intent(this, MainActivity.class);
