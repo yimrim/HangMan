@@ -49,10 +49,8 @@ public class GuessActivity extends AppCompatActivity implements View.OnClickList
                 Intent backToMain = new Intent(this, MainActivity.class);
                 if (hangMan.isFailed()) {
                     sendChar.setText("Reset Game");
-                    Toast.makeText(getApplicationContext(), "You've failed!", Toast.LENGTH_SHORT).show();
                 } else if (hangMan.isWon()) {
                     sendChar.setText("Reset Game");
-                    Toast.makeText(getApplicationContext(), "You've won!", Toast.LENGTH_SHORT).show();
                 }
                 if (sendChar.getText().equals("Reset Game")) {
                     startActivity(backToMain);
